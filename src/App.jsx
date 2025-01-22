@@ -1,15 +1,5 @@
 import { useState } from "react";
 import "./App.css";
-import Button from "@mui/material/Button";
-// import Table from "@mui/material/Table";
-// import TableBody from "@mui/material/TableBody";
-// import TableCell from "@mui/material/TableCell";
-// import TableContainer from "@mui/material/TableContainer";
-// import TableHead from "@mui/material/TableHead";
-// import TableRow from "@mui/material/TableRow";
-// import Paper from "@mui/material/Paper";
-// import UserForm from "./UserForm";
-// import UserForm from "./UserForm.jsx";
 import MedalList from "./MedalList.jsx";
 const App = () => {
   const [rows, setRows] = useState([
@@ -109,43 +99,6 @@ const App = () => {
         </div>
       </form>
       <MedalList rows={rows} deleteMedalInfo={deleteMedalInfo} />
-      {/* <TableContainer component={Paper}>
-        <Table sx={{ minWidth: 650 }} aria-label="simple table">
-          <TableHead>
-            <TableRow>
-              <TableCell>국가명</TableCell>
-              <TableCell align="right">금메달</TableCell>
-              <TableCell align="right">은메달</TableCell>
-              <TableCell align="right">동메달</TableCell>
-              <TableCell align="right">액션</TableCell>
-            </TableRow>
-          </TableHead>
-          <TableBody>
-            {rows.map((rows) => (
-              <TableRow
-                key={rows.id}
-                sx={{ "&:last-child td, &:last-child th": { border: 0 } }}
-              >
-                <TableCell component="th" scope="row">
-                  {rows.country}
-                </TableCell>
-                <TableCell align="right">{rows.gold}</TableCell>
-                <TableCell align="right">{rows.silver}</TableCell>
-                <TableCell align="right">{rows.copper}</TableCell>
-                <TableCell align="right">
-                  <Button
-                    variant="contained"
-                    color="error"
-                    onClick={() => deleteMedalInfo(rows.id)}
-                  >
-                    삭제
-                  </Button>
-                </TableCell>
-              </TableRow>
-            ))}
-          </TableBody>
-        </Table>
-      </TableContainer> */}
     </div>
   );
 };
