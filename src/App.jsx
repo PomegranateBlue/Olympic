@@ -1,16 +1,17 @@
 import { useState } from "react";
 import "./App.css";
 import Button from "@mui/material/Button";
-import Table from "@mui/material/Table";
-import TableBody from "@mui/material/TableBody";
-import TableCell from "@mui/material/TableCell";
-import TableContainer from "@mui/material/TableContainer";
-import TableHead from "@mui/material/TableHead";
-import TableRow from "@mui/material/TableRow";
-import Paper from "@mui/material/Paper";
+// import Table from "@mui/material/Table";
+// import TableBody from "@mui/material/TableBody";
+// import TableCell from "@mui/material/TableCell";
+// import TableContainer from "@mui/material/TableContainer";
+// import TableHead from "@mui/material/TableHead";
+// import TableRow from "@mui/material/TableRow";
+// import Paper from "@mui/material/Paper";
 // import UserForm from "./UserForm";
+// import UserForm from "./UserForm.jsx";
+import MedalList from "./MedalList.jsx";
 const App = () => {
-  //createData는 데이터를 받아 객체로 반환
   const [rows, setRows] = useState([
     {
       id: 1,
@@ -57,11 +58,8 @@ const App = () => {
       silver: silverMedal,
       copper: copperMedal,
     };
-    const updateRows = rows.map(
-      (row) =>
-        row.country === country
-          ? { ...row, ...updateMedal } // 조건에 맞으면 업데이트된 값 반환
-          : row // 조건에 맞지 않으면 기존 값 반환
+    const updateRows = rows.map((row) =>
+      row.country === country ? { ...row, ...updateMedal } : row
     );
     setRows(updateRows);
   };
@@ -69,53 +67,49 @@ const App = () => {
     <div className="contentContainer">
       <h1>2024 올림픽 메달 집계</h1>
       <form className="formContent">
-        <div className="inputField">
-          <label>국가명</label>
-          <input
-            type="text"
-            onChange={(e) => setCountry(e.target.value)}
-          ></input>
-        </div>
-        <div className="inputField">
-          <label>금메달</label>
-          <input
-            type="number"
-            value={goldMedal}
-            onChange={(e) => setGoldMedal(Number(e.target.value))}
-          ></input>
-        </div>
-        <div className="inputField">
-          <label>은메달</label>
-          <input
-            type="number"
-            value={silverMedal}
-            onChange={(e) => setSilverMedal(Number(e.target.value))}
-          ></input>
-        </div>
-        <div className="inputField">
-          <label>동메달</label>
-          <input
-            type="number"
-            value={copperMedal}
-            onChange={(e) => setCopperMedal(Number(e.target.value))}
-          ></input>
+        <div className="inputContainer">
+          <div className="inputField">
+            <label>국가명</label>
+            <input
+              type="text"
+              onChange={(e) => setCountry(e.target.value)}
+            ></input>
+          </div>
+          <div className="inputField">
+            <label>금메달</label>
+            <input
+              type="number"
+              value={goldMedal}
+              onChange={(e) => setGoldMedal(Number(e.target.value))}
+            ></input>
+          </div>
+          <div className="inputField">
+            <label>은메달</label>
+            <input
+              type="number"
+              value={silverMedal}
+              onChange={(e) => setSilverMedal(Number(e.target.value))}
+            ></input>
+          </div>
+          <div className="inputField">
+            <label>동메달</label>
+            <input
+              type="number"
+              value={copperMedal}
+              onChange={(e) => setCopperMedal(Number(e.target.value))}
+            ></input>
+          </div>
         </div>
 
         <div className="btnContainer">
-          <Button
-            variant="contained"
-            type="submit"
-            value={country}
-            onClick={addMedalInfo}
-          >
+          <button type="submit" value={country} onClick={addMedalInfo}>
             추가
-          </Button>
-          <Button variant="contained" onClick={updateMedalInfo}>
-            업데이트
-          </Button>
+          </button>
+          <button onClick={updateMedalInfo}>업데이트</button>
         </div>
       </form>
-      <TableContainer component={Paper}>
+      <MedalList rows={rows} deleteMedalInfo={deleteMedalInfo} />
+      {/* <TableContainer component={Paper}>
         <Table sx={{ minWidth: 650 }} aria-label="simple table">
           <TableHead>
             <TableRow>
@@ -139,13 +133,19 @@ const App = () => {
                 <TableCell align="right">{rows.silver}</TableCell>
                 <TableCell align="right">{rows.copper}</TableCell>
                 <TableCell align="right">
-                  <button onClick={() => deleteMedalInfo(rows.id)}>삭제</button>
+                  <Button
+                    variant="contained"
+                    color="error"
+                    onClick={() => deleteMedalInfo(rows.id)}
+                  >
+                    삭제
+                  </Button>
                 </TableCell>
               </TableRow>
             ))}
           </TableBody>
         </Table>
-      </TableContainer>
+      </TableContainer> */}
     </div>
   );
 };
