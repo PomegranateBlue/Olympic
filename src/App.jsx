@@ -12,8 +12,21 @@ const App = () => {
       silver: 5,
       copper: 3,
     },
+    {
+      id: 2,
+      country: "미국",
+      gold: 30,
+      silver: 10,
+      copper: 10,
+    },
+    {
+      id: 3,
+      country: "일본",
+      gold: 6,
+      silver: 5,
+      copper: 3,
+    },
   ]);
-  console.log(rows);
 
   const deleteMedalInfo = (id) => {
     setRows(rows.filter((element) => element.id !== id));
@@ -22,8 +35,8 @@ const App = () => {
   return (
     <div className="contentContainer">
       <h1>2024 올림픽 메달 집계</h1>
-      <MedalSort />
       <MedalForm rows={rows} setRows={setRows} />
+      <MedalSort rows={rows} setRows={setRows} />
       <MedalList rows={rows} deleteMedalInfo={deleteMedalInfo} />
     </div>
   );
