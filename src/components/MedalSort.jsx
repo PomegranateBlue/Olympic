@@ -6,7 +6,7 @@ const MedalSort = ({ rows, setRows }) => {
     switch (selectOption) {
       case "id":
         console.log("기본 정렬");
-        // sorted.sort((a, b) => a.id - b.id);
+
         setRows([...rows].sort((a, b) => a.id - b.id));
         break;
       case "totalMedal":
