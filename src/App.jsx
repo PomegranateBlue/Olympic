@@ -3,6 +3,7 @@ import "./App.css";
 import MedalList from "./components/MedalList.jsx";
 import MedalForm from "./components/MedalForm.jsx";
 import MedalSort from "./components/MedalSort.jsx";
+import MedalSaveLoad from "./components/MedalSaveLoad.jsx";
 const App = () => {
   const [rows, setRows] = useState([
     {
@@ -34,7 +35,10 @@ const App = () => {
 
   return (
     <div className="contentContainer">
-      <h1>2024 올림픽 메달 집계</h1>
+      <div className="headerContainer">
+        <h1>2024 올림픽 메달 집계</h1>
+        <MedalSaveLoad rows={rows} setRows={setRows} />
+      </div>
       <MedalForm rows={rows} setRows={setRows} />
       <MedalSort rows={rows} setRows={setRows} />
       <MedalList rows={rows} deleteMedalInfo={deleteMedalInfo} />
