@@ -1,6 +1,7 @@
 import { useState } from "react";
 import "./App.css";
 import MedalList from "./MedalList.jsx";
+import MedalForm from "./MedalForm.jsx";
 const App = () => {
   const [rows, setRows] = useState([
     {
@@ -52,11 +53,12 @@ const App = () => {
       row.country === country ? { ...row, ...updateMedal } : row
     );
     setRows(updateRows);
+    country("");
   };
   return (
     <div className="contentContainer">
       <h1>2024 올림픽 메달 집계</h1>
-      <form className="formContent">
+      {/* <form className="formContent">
         <div className="inputContainer">
           <div className="inputField">
             <label>국가명</label>
@@ -97,7 +99,8 @@ const App = () => {
           </button>
           <button onClick={updateMedalInfo}>업데이트</button>
         </div>
-      </form>
+      </form> */}
+      <MedalForm rows={rows} setRows={setRows} />
       <MedalList rows={rows} deleteMedalInfo={deleteMedalInfo} />
     </div>
   );
