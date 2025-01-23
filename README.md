@@ -1,8 +1,6 @@
-# React + Vite
+# 올림픽 메달 집계
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
-
-Currently, two official plugins are available:
-
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+기능 설명
+1. 국가명,메달 수를 입력하고 추가하거나 기존의 정보를 업데이트 할 수 있습니다.
+2. 로컬 스토리지로 현재 데이터를 저장하고 불러올 수 있습니다.
+3. 기본적으로 생성한 항목별로 정리하고 금메달 수, 총 메달 수로 정렬이 가능합니다
