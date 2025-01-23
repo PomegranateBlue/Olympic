@@ -1,16 +1,58 @@
+.TableContainer {
+  display: block;
+}
+
+.TableContent {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.tableHeader {
+  width: 100%;
+  height: 60px;
+  margin: 0;
+  padding: 0;
+  color: white;
+  font-size: 18px;
+  font-weight: 900;
+  background-color: darkslateblue;
+}
+
+.tableHeaderCell {
+}
+
 .listHeader {
   font-size: 18px;
 }
 
 .listDetail {
   text-align: center;
-  font-size: 20px;
+  font-size: 22px;
+  font-weight: 500;
+  color: white;
+  font-family: Impact, Haettenschweiler, "Arial Narrow Bold", sans-serif;
 }
 
+.listDetail:nth-child(odd) {
+  background-color: rgb(134, 185, 237);
+}
+
+.listDetail:nth-child(even) {
+  background-color: cornflowerblue;
+}
 #deleteBtn {
   color: white;
   background-color: red;
-  font-size: 12px;
-  width: 60px;
-  height: 30px;
+  border-radius: 4px;
+  font-weight: 500;
+  font-size: 15px;
+  border: none;
+  cursor: pointer;
+  padding: 12px 16px;
+}
+
+.tableHeaderCell {
+}
+.tableBodyCell {
+  padding: 8px;
 }
