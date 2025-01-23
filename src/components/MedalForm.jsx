@@ -19,7 +19,7 @@ const MedalForm = ({ rows, setRows }) => {
     }
     const newRow = {
       id: Date.now(),
-      country,
+      country: country,
       gold: goldMedal,
       silver: silverMedal,
       copper: copperMedal,
