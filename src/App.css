@@ -27,32 +27,9 @@ h1 {
 .headerContainer > h1 {
   margin: 3% auto;
 }
-.localStorageContainer {
-  display: flex;
-  gap: 10px;
-  margin-bottom: 20px;
-}
 
-.localStorageContainer > button:nth-child(odd) {
-  color: white;
-  background-color: #41d33c;
-  font-size: 14px;
-  padding: 12px 20px;
-  border: none;
-  border-radius: 4px;
-  align-self: center;
-  font-weight: 700;
-  cursor: pointer;
-}
-
-.localStorageContainer > button:nth-child(even) {
-  color: white;
-  background-color: #2f79c7;
-  font-size: 14px;
-  padding: 12px 20px;
-  border: none;
-  border-radius: 4px;
-  align-self: center;
-  font-weight: 700;
-  cursor: pointer;
+.emptyMessage {
+  text-align: center;
+  opacity: 0.8;
+  font-size: 20px;
 }

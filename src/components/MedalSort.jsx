@@ -1,10 +1,6 @@
-import { useState } from "react";
 import "../styles/MedalSort.css";
+
 const MedalSort = ({ rows, setRows }) => {
-  //rows에서 gold,silver,copper,id를 통해 정렬
-  //기본 정렬은 id순
-  //금메달 갯수와
-  //총 메달 수의 합으로 정렬
   const sortByValue = (e) => {
     const selectOption = e.target.value;
     switch (selectOption) {
@@ -32,9 +28,9 @@ const MedalSort = ({ rows, setRows }) => {
   return (
     <div className="sortContainer">
       <select className="options" onChange={sortByValue}>
-        <option value="id">기본 정렬</option>
-        <option value="totalMedal">총 메달 수</option>
-        <option value="goldMedal">금메달 수</option>
+        <option value="id">기본 순</option>
+        <option value="totalMedal">총 메달 순</option>
+        <option value="goldMedal">금메달 순</option>
       </select>
     </div>
   );

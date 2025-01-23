@@ -14,13 +14,25 @@
 
 .sortContainer > select {
   width: 300px;
-  background-color: rgb(255, 251, 251);
-  padding: 6px;
-  border: 2px solid black;
-  border-radius: 16px;
+  padding: 10px;
+  border: none;
+  color: white;
+  border-radius: 6px;
   font-weight: 700;
   font-size: 18px;
   appearance: none;
   text-align: center;
   cursor: pointer;
+  background: linear-gradient(202deg, #5d75b7 32%, #9c4877 88%);
+  transition: all 0.5s ease-in-out;
+}
+
+.sortContainer > select:hover {
+  background: linear-gradient(202deg, #9c4877 32%, #5d75b7 88%);
+  transform: scale(1.02);
+  box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.2);
+}
+
+option {
+  color: black;
 }

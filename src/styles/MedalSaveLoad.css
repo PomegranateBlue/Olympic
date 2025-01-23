@@ -1,0 +1,39 @@
+.localStorageContainer {
+  display: flex;
+  gap: 10px;
+  margin-bottom: 20px;
+}
+
+.localStorageContainer > button {
+  transition: all 0.5s ease-in-out;
+}
+
+.localStorageContainer > button:hover {
+  box-shadow: -10px -10px 20px rgba(255, 255, 255, 0.45),
+    6px 6px 10px rgba(94, 104, 121, 0.3);
+  transition: all 0.1s ease-in-out;
+}
+
+.localStorageContainer > button:nth-child(odd) {
+  color: white;
+  background-color: #35b931;
+  font-size: 14px;
+  padding: 12px 20px;
+  border: none;
+  border-radius: 4px;
+  align-self: center;
+  font-weight: 700;
+  cursor: pointer;
+}
+
+.localStorageContainer > button:nth-child(even) {
+  color: white;
+  background-color: #2f79c7;
+  font-size: 14px;
+  padding: 12px 20px;
+  border: none;
+  border-radius: 4px;
+  align-self: center;
+  font-weight: 700;
+  cursor: pointer;
+}

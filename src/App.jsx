@@ -5,29 +5,7 @@ import MedalForm from "./components/MedalForm.jsx";
 import MedalSort from "./components/MedalSort.jsx";
 import MedalSaveLoad from "./components/MedalSaveLoad.jsx";
 const App = () => {
-  const [rows, setRows] = useState([
-    {
-      id: 1,
-      country: "한국",
-      gold: 10,
-      silver: 5,
-      copper: 3,
-    },
-    {
-      id: 2,
-      country: "미국",
-      gold: 30,
-      silver: 10,
-      copper: 10,
-    },
-    {
-      id: 3,
-      country: "일본",
-      gold: 6,
-      silver: 5,
-      copper: 3,
-    },
-  ]);
+  const [rows, setRows] = useState([]);
 
   const deleteMedalInfo = (id) => {
     setRows(rows.filter((element) => element.id !== id));
@@ -41,7 +19,11 @@ const App = () => {
       </div>
       <MedalForm rows={rows} setRows={setRows} />
       <MedalSort rows={rows} setRows={setRows} />
-      <MedalList rows={rows} deleteMedalInfo={deleteMedalInfo} />
+      {rows.length === 0 ? (
+        <p className="emptyMessage">현재 기록된 데이터가 없습니다</p>
+      ) : (
+        <MedalList rows={rows} deleteMedalInfo={deleteMedalInfo} />
+      )}
     </div>
   );
 };

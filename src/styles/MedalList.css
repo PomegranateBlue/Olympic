@@ -51,6 +51,11 @@
   padding: 12px 16px;
 }
 
+#deleteBtn:hover {
+  box-shadow: 3px 3px 5px rgba(249, 0, 0, 0.979), 2px 2px 4px rgb(217, 217, 217);
+  transition: all 0.1s ease-in-out;
+}
+
 .tableHeaderCell {
 }
 .tableBodyCell {
@@ -104,4 +109,10 @@
   align-self: center;
   font-weight: 700;
   cursor: pointer;
+  transition: all 0.2s ease-in-out;
+}
+
+.btnContainer > button:hover {
+  box-shadow: -10px -10px 20px rgba(255, 255, 255, 0.45),
+    6px 6px 10px rgba(94, 104, 121, 0.3);
 }

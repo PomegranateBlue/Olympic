@@ -9,6 +9,10 @@ const MedalForm = ({ rows, setRows }) => {
   const addMedalInfo = (e) => {
     e.preventDefault();
     const checkCountry = rows.some((row) => row.country === country);
+    if (!country) {
+      alert("국가를 입력하세요");
+      return;
+    }
     if (checkCountry) {
       alert("이미 존재하는 국가입니다");
       return;
@@ -21,7 +25,10 @@ const MedalForm = ({ rows, setRows }) => {
       copper: copperMedal,
     };
     setRows([...rows, newRow]);
-    console.log(rows);
+    setCountry("");
+    setGoldMedal(0);
+    setSilverMedal(0);
+    setCopperMedal(0);
   };
 
   const updateMedalInfo = (e) => {
@@ -40,7 +47,6 @@ const MedalForm = ({ rows, setRows }) => {
       row.country === country ? { ...row, ...updateMedal } : row
     );
     setRows(updateRows);
-    country("");
   };
   return (
     <form className="formContent">
@@ -48,7 +54,9 @@ const MedalForm = ({ rows, setRows }) => {
         <div className="inputField">
           <label>국가명</label>
           <input
+            placeholder="국가를 입력하세요"
             type="text"
+            value={country}
             onChange={(e) => setCountry(e.target.value)}
           ></input>
         </div>
