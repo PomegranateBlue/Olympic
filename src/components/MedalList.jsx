@@ -1,4 +1,4 @@
-import "./MedalList.css";
+import "../styles/MedalList.css";
 
 const MedalList = ({ rows, deleteMedalInfo }) => {
   return (

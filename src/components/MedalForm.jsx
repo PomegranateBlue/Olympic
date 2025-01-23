@@ -23,9 +23,6 @@ const MedalForm = ({ rows, setRows }) => {
     setRows([...rows, newRow]);
     console.log(rows);
   };
-  const deleteMedalInfo = (id) => {
-    setRows(rows.filter((element) => element.id !== id));
-  };
 
   const updateMedalInfo = (e) => {
     e.preventDefault();

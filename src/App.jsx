@@ -1,7 +1,8 @@
 import { useState } from "react";
 import "./App.css";
-import MedalList from "./MedalList.jsx";
-import MedalForm from "./MedalForm.jsx";
+import MedalList from "./components/MedalList.jsx";
+import MedalForm from "./components/MedalForm.jsx";
+import MedalSort from "./components/MedalSort.jsx";
 const App = () => {
   const [rows, setRows] = useState([
     {
@@ -12,6 +13,7 @@ const App = () => {
       copper: 3,
     },
   ]);
+  console.log(rows);
 
   const deleteMedalInfo = (id) => {
     setRows(rows.filter((element) => element.id !== id));
@@ -20,7 +22,7 @@ const App = () => {
   return (
     <div className="contentContainer">
       <h1>2024 올림픽 메달 집계</h1>
-
+      <MedalSort />
       <MedalForm rows={rows} setRows={setRows} />
       <MedalList rows={rows} deleteMedalInfo={deleteMedalInfo} />
     </div>
